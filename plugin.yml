@@ -1,0 +1,7 @@
+name: REDNoBreak
+author: Adam1609
+api: 2.0.0
+load: STARTUP
+main: REDNoBreak\Main
+version: 0.1
+description: Anti TNT Breaking Block
