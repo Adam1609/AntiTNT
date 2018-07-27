@@ -1,5 +1,5 @@
 <?php
-namespace REDNoBreak;
+namespace AntiTNT;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -8,14 +8,14 @@ use pocketmine\event\entity\ExplosionPrimeEvent;
 
 class Main extends PluginBase implements Listener{
 	
-	public function onEnable(){
+	public function onEnable() : void{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(TextFormat::GREEN . "Kích hoạt: TNT không nổ block!");
+		$this->getLogger()->info(TextFormat::GREEN . "Anti TNT activated!");
 	}
 	public function onExplosionPrime(ExplosionPrimeEvent $event){
 		$event->setBlockBreaking(false);
 	}
-	public function onDisable(){
-		$this->getLogger()->info(TextFormat::RED . "Plugin đã hủy! Có phải server bạn vừa tắt hay plugin bị lỗi?");
+	public function onDisable() : void{
+		$this->getLogger()->info(TextFormat::RED . "Plugin disabled");
 	}
 }
